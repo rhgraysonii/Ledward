@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
   while(1) {
     fputs("Ledward>>>", stdout);
     fgets(input, 2048, stdin);
-    printf("Input: %s", input)
+    printf("Input: %s", input);
   }
   return 0;
 }
