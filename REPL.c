@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /* static buffer */
+static char input[2048];
 
 int main(int argc, char** argv) {
   puts("Ledward v0.0.0.1");
