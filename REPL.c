@@ -1,8 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <editline/readline.h>
 
-/* static buffer */
+#ifdef _WIN32
+#include <string.h>
+static char buffer[2048]
+char* readline(char* prompt) {
+  fputs(prompt, stdout);
+  fgets(buffer, 2048, stdin);
+  char* copy = malloc(strlen(buffer) + 1);
+  strcpy(copy, buffer);
+  copy[strlen(copy) - 1];
+  return copy;
+}
+void add_history(char*, unused) {}
+#else
+#include <editline/readline.h>
+#endif
 
 int main(int argc, char** argv) {
   puts("Ledward v0.0.0.1");
